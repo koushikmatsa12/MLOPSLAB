@@ -1,0 +1,131 @@
+{
+  "experiment_name": "Overnight_Water_Shortage_Prediction",
+  "selected_model": "RandomForest",
+  "registered_model_name": "WaterShortagePredictor",
+  "registered_model_version": "1",
+  "run_ids": {
+    "DecisionTree": "b0b9a036508f4003846421a306823bf9",
+    "RandomForest": "8305f591244e4e57b9dbfd501cac2d49"
+  },
+  "test_set_size": 125,
+  "models": {
+    "DecisionTree": {
+      "precision": 0.8594,
+      "recall": 0.873,
+      "f1_score": 0.8661,
+      "accuracy": 0.864,
+      "roc_auc": 0.9003,
+      "confusion_matrix": [
+        [
+          53,
+          9
+        ],
+        [
+          8,
+          55
+        ]
+      ],
+      "tn": 53,
+      "fp": 9,
+      "fn": 8,
+      "tp": 55,
+      "v1_test_recall": 0.7857,
+      "v2_test_recall": 0.898,
+      "feature_importances": {
+        "projected_water_buffer": 0.8756,
+        "expected_pumping_duration": 0.0319,
+        "leakage_estimate": 0.031,
+        "tank_level_8pm": 0.0256,
+        "expected_pumping_rate": 0.0168,
+        "avg_hourly_consumption": 0.0119,
+        "connected_households": 0.0072,
+        "expected_overnight_demand": 0.0,
+        "expected_pump_supply": 0.0,
+        "day_type_Holiday": 0.0,
+        "day_type_Weekday": 0.0,
+        "day_type_Weekend": 0.0
+      }
+    },
+    "RandomForest": {
+      "precision": 0.8382,
+      "recall": 0.9048,
+      "f1_score": 0.8702,
+      "accuracy": 0.864,
+      "roc_auc": 0.9531,
+      "confusion_matrix": [
+        [
+          51,
+          11
+        ],
+        [
+          6,
+          57
+        ]
+      ],
+      "tn": 51,
+      "fp": 11,
+      "fn": 6,
+      "tp": 57,
+      "v1_test_recall": 1.0,
+      "v2_test_recall": 0.8776,
+      "feature_importances": {
+        "projected_water_buffer": 0.4451,
+        "tank_level_8pm": 0.2028,
+        "expected_overnight_demand": 0.0942,
+        "avg_hourly_consumption": 0.0777,
+        "expected_pump_supply": 0.048,
+        "expected_pumping_duration": 0.0368,
+        "connected_households": 0.0344,
+        "expected_pumping_rate": 0.0284,
+        "leakage_estimate": 0.0249,
+        "day_type_Weekend": 0.0034,
+        "day_type_Weekday": 0.0029,
+        "day_type_Holiday": 0.0012
+      }
+    }
+  },
+  "version_drift_evaluation": {
+    "v1": {
+      "precision": 0.8,
+      "recall": 0.8889,
+      "f1_score": 0.8421,
+      "accuracy": 0.88,
+      "roc_auc": 0.9253,
+      "confusion_matrix": [
+        [
+          28,
+          4
+        ],
+        [
+          2,
+          16
+        ]
+      ],
+      "tn": 28,
+      "fp": 4,
+      "fn": 2,
+      "tp": 16
+    },
+    "v2": {
+      "precision": 0.8286,
+      "recall": 0.9062,
+      "f1_score": 0.8657,
+      "accuracy": 0.82,
+      "roc_auc": 0.941,
+      "confusion_matrix": [
+        [
+          12,
+          6
+        ],
+        [
+          3,
+          29
+        ]
+      ],
+      "tn": 12,
+      "fp": 6,
+      "fn": 3,
+      "tp": 29
+    }
+  }
+}

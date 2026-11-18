@@ -1,0 +1,32 @@
+{
+  "tank_capacity_litres": 100000.0,
+  "critical_threshold_litres": 15000.0,
+  "generated_at_utc": "2026-11-18T09:30:22.487065+00:00",
+  "versions": {
+    "v1": {
+      "file": "data/raw/water_tank_v1.csv",
+      "description": "Baseline normal-season residential overnight water records",
+      "record_count": 250,
+      "sha256": "b1b1a16cc15032c880faf3af2100deab7ec3f2e40efd468b4d6f118043926f94",
+      "mean_avg_hourly_consumption": 37.34,
+      "mean_tank_level_8pm": 56695.13,
+      "shortage_rate": 0.36,
+      "missing_values_total": 15
+    },
+    "v2": {
+      "file": "data/raw/water_tank_v2.csv",
+      "description": "Summer-season simulation with ~35% higher household water demand",
+      "record_count": 250,
+      "sha256": "a3d113ad1389155046d8c410e510b5a877aa96fe1392a3db67f8c757d0529f11",
+      "mean_avg_hourly_consumption": 50.3,
+      "mean_tank_level_8pm": 54836.27,
+      "shortage_rate": 0.648,
+      "missing_values_total": 15
+    }
+  },
+  "version_comparison": {
+    "v1_to_v2_demand_increase_pct": 34.71,
+    "v1_shortage_count": 90,
+    "v2_shortage_count": 162
+  }
+}

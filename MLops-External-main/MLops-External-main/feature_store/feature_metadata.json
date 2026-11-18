@@ -1,0 +1,55 @@
+{
+  "feature_store_version": "1.0",
+  "updated_at_utc": "2026-11-18T09:30:22.624688+00:00",
+  "tank_capacity_litres": 100000.0,
+  "critical_threshold_litres": 15000.0,
+  "overnight_hours": 10.0,
+  "engineered_features": {
+    "expected_overnight_demand": "connected_households * avg_hourly_consumption * 10 + leakage_estimate (litres)",
+    "expected_pump_supply": "expected_pumping_duration * expected_pumping_rate (litres)",
+    "projected_water_buffer": "tank_level_8pm + expected_pump_supply - expected_overnight_demand - 15000 (litres)"
+  },
+  "model_features": {
+    "numeric": [
+      "tank_level_8pm",
+      "connected_households",
+      "avg_hourly_consumption",
+      "expected_pumping_duration",
+      "expected_pumping_rate",
+      "leakage_estimate",
+      "expected_overnight_demand",
+      "expected_pump_supply",
+      "projected_water_buffer"
+    ],
+    "categorical": [
+      "day_type"
+    ],
+    "target": "morning_water_shortage"
+  },
+  "tables": {
+    "v1": {
+      "path": "feature_store/v1/engineered_features.csv",
+      "rows": 250,
+      "missing_values_after_cleaning": 0,
+      "mean_expected_overnight_demand": 50164.67,
+      "mean_projected_water_buffer": 11614.01,
+      "shortage_rate": 0.36
+    },
+    "v2": {
+      "path": "feature_store/v2/engineered_features.csv",
+      "rows": 250,
+      "missing_values_after_cleaning": 0,
+      "mean_expected_overnight_demand": 66534.24,
+      "mean_projected_water_buffer": -6940.22,
+      "shortage_rate": 0.648
+    },
+    "combined": {
+      "path": "feature_store/combined/engineered_features.csv",
+      "rows": 500,
+      "missing_values_after_cleaning": 0,
+      "mean_expected_overnight_demand": 58349.45,
+      "mean_projected_water_buffer": 2336.89,
+      "shortage_rate": 0.504
+    }
+  }
+}
